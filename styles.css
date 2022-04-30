@@ -1,0 +1,204 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #eee;
+    --bg-1: #ccc;
+    --bg-2: #efefef;
+    --bg-opacity: rgba(168, 168, 168, 0.9);
+
+    --fender: #7e2424;
+    --yamaha: #2d622d;
+    --maton: #282870;
+
+    --txt-black: #000;
+    --txt-white: #f1f1f1;
+}
+
+body {
+    background-color: var(--bg);
+    font-size: 16px;
+}
+
+.sidebar {
+    width: 80px;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.checkout {
+    margin: 1rem 0;
+    position: relative;
+}
+
+.checkout_count {
+    background-color: white;
+    border-radius: 50%;
+    width: 20px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -0.15rem;
+    right: -0.15rem;
+}
+
+.checkout,
+.add {
+    background-color: var(--bg-1);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#instrument-store {
+    margin: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-box {
+    width: 30%;
+    height: auto;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--bg-1);
+    width: 100%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.25s all;
+}
+
+.Fender:hover {
+    background-color: var(--fender);
+}
+
+.Yamaha:hover {
+    background-color: var(--yamaha);
+}
+
+.Maton:hover {
+    background-color: var(--maton);
+}
+
+.Fender:hover .name,
+.Yamaha:hover .name,
+.Maton:hover .name {
+    color: var(--txt-white);
+}
+
+.card img {
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 250px;
+}
+
+.name {
+    text-align: center;
+    color: var(--txt-black);
+    margin-top: 0.5rem;
+    transition: 0.25s all;
+}
+
+.card button,
+.popup-box button {
+    background-color: var(--bg-2);
+    border: 0;
+    border-radius: 0.25rem;
+    width: 40%;
+    padding: 0.5rem;
+    margin: 0.5rem auto auto auto;
+    transition: 0.25s all;
+    cursor: pointer;
+}
+
+.card button:hover,
+.popup-box button:hover {
+    background-color: var(--bg-1);
+}
+
+.popup-instrument,
+.popup-add {
+    background-color: var(--bg-opacity);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    z-index: 980;
+}
+
+.hidden {
+    display: none;
+}
+
+.popup-box {
+    background-color: var(--bg-1);
+    border-radius: 1rem;
+    width: 30%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.popup-box img {
+    height: 300px;
+    border-radius: 0.5rem;
+}
+
+.name-price {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-box h3 {
+    width: 100%;
+    text-align: left;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .card-box {
+        width: 75%;
+    }
+}
